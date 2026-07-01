@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+body.theme-dark {
+    background: linear-gradient(-45deg, #0f0f0f, #1a1a2e, #16213e, #0f0f0f);
+    background-size: 400% 400%;
+    animation: darkFlow 15s ease infinite;
+}
+
+
+body.theme-light {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+@keyframes darkFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+#background-video {
+    display: none;
+}
+
+#chat-container {
+    max-width: 600px;
+    margin: 5% auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: white;
+    color: black;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.theme-light #chat-container {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+.theme-light #messages {
+    background: #f0f0f0;
+    color: black;
+}
