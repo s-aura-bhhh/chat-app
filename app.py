@@ -6,7 +6,7 @@ from datetime import datetime
 import pytz
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'lovnish_super_secret_key')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-only-fallback-key')
 
 socketio = SocketIO(app, async_mode='threading', cors_allowed_origins='*')
 
@@ -16,7 +16,7 @@ MONGO_URI = os.environ.get(
     "mongodb+srv://SSaura:27gRZUFC7AbmuOgE@ssaura.qvh8vuz.mongodb.net/?appName=SSaura"
 )
 client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
-db = client['lovnishdarkchatDB']
+db = client['anonymousChatDB']
 messages_collection = db['messages']
 
 IST = pytz.timezone('Asia/Kolkata')
