@@ -11,10 +11,9 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'lovnish_super_secret_ke
 socketio = SocketIO(app, async_mode='threading', cors_allowed_origins='*')
 
 # Connect to MongoDB Atlas
-MONGO_URI = os.environ.get(
-    'MONGO_URI',
-    "mongodb+srv://SSaura:Baggles860loveem@ssaura.qvh8vuz.mongodb.net/?appName=SSaura"
-)
+MONGO_URI = os.environ.get('MONGO_URI')
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-only-fallback-key')
+
 client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
 db = client['lovnishdarkchatDB']
 messages_collection = db['messages']
